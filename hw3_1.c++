@@ -7,14 +7,16 @@ using namespace std;
 void addMatrix(int a[SIZE][SIZE], int b[SIZE][SIZE], int c[SIZE][SIZE], int p, int q, int n, int m) {
     if (p != n || q != m)
     {
-        cout << "계산 오류";
-        return ;
+        cout << "계산 오류" << endl;
+        exit(1); //예외처리, 시스템 바로 종료
     }
-    for (int i = 0; i < p; i++)
-    {
-        for (int j = 0; j < q; j++)
+    else {
+        for (int i = 0; i < p; i++)
         {
-            c[i][j] = a[i][j] + b[i][j];
+            for (int j = 0; j < q; j++)
+            {
+                c[i][j] = a[i][j] + b[i][j];
+            }
         }
     }
 }
@@ -22,14 +24,16 @@ void addMatrix(int a[SIZE][SIZE], int b[SIZE][SIZE], int c[SIZE][SIZE], int p, i
 void subMatrix(int a[SIZE][SIZE], int b[SIZE][SIZE], int c[SIZE][SIZE], int p, int q, int n, int m) {
     if (p != n || q != m)
     {
-        cout << "계산 오류";
-        return;
+        cout << "계산 오류" << endl;
+        exit(1);
     }
-    for (int i = 0; i < p; i++)
-    {
-        for (int j = 0; j < q; j++)
+    else {
+        for (int i = 0; i < p; i++)
         {
-            c[i][j] = a[i][j] - b[i][j];
+            for (int j = 0; j < q; j++)
+            {
+                c[i][j] = a[i][j] - b[i][j];
+            }
         }
     }
 }
